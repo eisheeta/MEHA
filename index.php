@@ -42,31 +42,8 @@
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-			           <li><a href="index.php">Home</a></li>
-			          <li><a href="about.php">About</a></li>
-			          <li><a href="doctors.php">Doctors</a></li>
-			          <li class="menu-has-children"><a href="">Blog</a>
-			            <ul>
-			              <li><a href="blog-home.php">Blog Home</a></li>
-			              <li><a href="blog-single.php">Blog Single</a></li>
-			            </ul>
-			          </li>	
-			          <li class="menu-has-children"><a href="">Features</a>
-			            <ul>
-			            	  <li><a href="gapi.php">Hospitals Near You</a></li>
-			            	  <li><a href="bmi.php">BMI Calculator</a></li>
-			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
-					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
-					            <ul>
-					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
-					              <li><a href="treatment.php">Treatment</a></li>
-
-					            </ul>
-					          </li>					                		
-			            </ul>
-			          </li>					          					          		          
-
-			          <li><a href="contact.php">Contact</a></li>
+			            <li><a href="index.php">Home</a></li>
+			            <li><a href="contact.php">Contact</a></li>
 
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
@@ -92,6 +69,19 @@
 				</div>					
 			</section>
 			<!-- End banner Area -->
+
+					<section class="our-mission-area section-gap">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Medical and Health Application</h1>
+								<p>One place to store all your medical data and simplify your routine medical check-ups</p>
+							</div>
+						</div>
+					</div>	
+				</div>
+				</section>
 
 					
 

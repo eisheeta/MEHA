@@ -1,86 +1,11 @@
-<!-- function to redirect -->
 <?php
-function redirect_to($NewLocation){
-    header("Location:".$NewLocation);
-   	exit;
-}
-?>
-<!-- function to execute signup -->
-<?php
- $Connection = mysqli_connect('localhost', 'root', '');
- $Selected = mysqli_select_db($Connection, 'health');
-
-if(isset($_POST["Signup"])){
-if(!empty($_POST["userid"])&&!empty($_POST["password"])){
-$Userid=$_POST["userid"];
-$Password=$_POST["password"];
-$Type=$_POST["type"];
-
-$Query="INSERT INTO login(userid, password, user_type)
-        VALUES('$Userid', '$Password', '$Type')";
-    $Execute=mysqli_query($Connection, $Query);
-if($Execute){
-	   
-    if($Type=="Doctor")
-     			redirect_to("DoctorDb.php");
-     	    else
-     	    	redirect_to("PatientDb.php");
-}
-}
-else{
-    echo '<span>Please fill all fields</span>';
-}
-} 
-?>
-
-<!-- function to execute login -->
-
-<?php
- $Connection = mysqli_connect('localhost', 'root', '');
- $Selected = mysqli_select_db($Connection, 'health');
-
-if(isset($_POST["login"])){
-
-	if(!empty($_POST["userid"])&&!empty($_POST["password"])){
-		session_start();
-		$Userid=$_POST["userid"];
-		$Password=$_POST["password"];
-		$Type=$_POST["type"];
-
-		$user_check_query = "SELECT id FROM login WHERE userid='$Userid' AND password='$Password' AND user_type='$Type' LIMIT 1";
-		$Execute=mysqli_query($Connection, $user_check_query);
-		$Id = 0;
-		while($DataRows=mysqli_fetch_array($Execute)){
-        $Id=$DataRows['id'];
-        }
-		$x= $Id;
-		$_SESSION['id'] = $x;
-        $result = mysqli_query($Connection, $user_check_query);
-        $user = mysqli_fetch_assoc($result);
-  
-        if ($user) { // if user exists
-        	
-        	if($Type=="Doctor")
-     			redirect_to("DoctorDb.php");
-     	    else
-     	    	redirect_to("PatientDb.php");
-        }
-        else{
-        	
-     		 echo '<span>incorrect id or password</span>';
-
-        }
-	}
-}	 
-?>
-
-
-
-
+session_start();
+$x= $_SESSION['id'];
+?>  
 
 
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+	<html lang="zxx" class="no-js">
 	<head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -110,11 +35,10 @@ if(isset($_POST["login"])){
 			<link rel="stylesheet" href="css/animate.min.css">
 			<link rel="stylesheet" href="css/owl.carousel.css">			
 			<link rel="stylesheet" href="css/jquery-ui.css">			
-			<link rel="stylesheet" href="css/login.css">
+			<link rel="stylesheet" href="css/main.css">
 		</head>
-<body>
-
-	<header id="header">
+		<body>	
+		  <header id="header">
 	  		
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
@@ -123,24 +47,30 @@ if(isset($_POST["login"])){
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
+
 			          <li><a href="index.php">Home</a></li>
-			          
+			          <li><a href="about.php">About</a></li>
 			          <li><a href="doctors.php">Doctors</a></li>
 			          <li class="menu-has-children"><a href="">Blog</a>
 			            <ul>
 			              <li><a href="blog-home.php">Blog Home</a></li>
 			              <li><a href="blog-single.php">Blog Single</a></li>
+
 			            </ul>
 			          </li>	
 			          <li class="menu-has-children"><a href="">Features</a>
 			            <ul>
+
 			            	  <li><a href="gapi.php">Hospitals Near You</a></li>
 			            	  <li><a href="bmi.php">BMI Calculator</a></li>
+
 			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
 					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
 					            <ul>
 					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
+
 					              <li><a href="treatment.php">Treatment</a></li>
+
 					            </ul>
 					          </li>					                		
 			            </ul>
@@ -159,133 +89,90 @@ if(isset($_POST["login"])){
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
 							<h1 class="text-white">
-								Log	In			
-							</h1>	 
+								Welcome to your dashboard				
+							</h1>	
 							
 						</div>	
 					</div>
 				</div>
 			</section>
 
+<!-- content -->
+<div class="container">
 
-			<section class="">
+<section class="info-area section-gap">
 				<div class="container">
+					<center>
 					<div class="row align-items-center">
-						<div class="col-lg-6 loginclass" style="width: 30%;">
+						<div style="margin:0 auto;">
 
-							<div class="card text-center">
-  							<div class="card-header">
-    							Log In
-  							</div>
-  							<div class="card-body">
-    						
-    						<div style="margin: 0 auto;">
+						<form action="DoctorDb.php" method="GET">
+   						
+   						<input type="text" class="form-control" name="Search" value="" placeholder="Search by Patient ID">
+        				<div style="padding: 10px 0;">
+        				<input class="btn btn-primary" type="submit" name="SearchButton" value="Search">
+        				</div>
+   					
+        				</form>
 
-    							<form action="login.php", method="post" style="margin: 0 auto;">
-
-								<div class="form-group">
-    							<label for="inputEmail3" class="col-sm-4 col-form-label">User Id</label>
-   								
-      							<input type="text" class="form-control" id="inputEmail3" placeholder="userid" name="userid">
-    							
-  								</div>
-
-  								<div class="form-group">
-    							<label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
-    							
-      							<input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
-    							
-  								</div>
-								
-								<div class="form-group">
-								<label class="my-1 mr-2 col-sm-4 col-form-label" for="inlineFormCustomSelectPref">Type Of User</label>
-  								
-  								<select class="form-control form-control-sm" id="inlineFormCustomSelectPref" name="type">
-    								       <option>Doctor</option>  
-    									   <option>Patient</option>
-    							</select>
-    							
- 								</div>
-
-								<div class="form-group">
-								
-								<button type="Submit" name="login" value="Login" class="btn btn-success">Log In</button>
-								
-								</div>
-							</form>
-
-
-
-    						</div>	
-    						
-  							</div>
-  							</div>
 						</div>
-					</di>
+						
+    				
+					</div>
+					</center>
 				</div>	
-			</section>
+</section>
 
-<hr style="width: 80%;">
-			<section class="">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-lg-6 loginclass" style="width: 30%;">
+<?php
+ $Connection = mysqli_connect('localhost', 'root', '');
+ $Selected = mysqli_select_db($Connection, 'health');
+if(isset($_GET['SearchButton'])){
+    $Search=$_GET['Search'];
+    $SearchQuery="SELECT * FROM login WHERE id='$Search' AND user_type='Patient' ";
+    $Execute=mysqli_query($Connection, $SearchQuery);
+     
+    while($DataRows=mysqli_fetch_array($Execute)){
+          $Id=$DataRows['id'];
+          $Name=$DataRows['userid']; 
+          $_SESSION['pid'] = $Id;
+        ?>
+        <div style="padding: 0 30%;">
+        <table width="100%" border="1" align="center">
+            
+            <tr>
+                <th><center>ID</center></th>
+                <th><center>Patient Name</center></th>
+                
+            </tr>
+            <tr>
+                <td><center><?php echo $Id;?></center></td>
+                <td><center><?php echo $Name;?></center></td>
 
-							<div class="card text-center">
-  							<div class="card-header">
-    							Sign Up
-  							</div>
-  							<div class="card-body">
-    						
-    						<div style="margin: 0 auto;">
-							
-							<form action="login.php", method="post" style="margin: 0 auto;">
-								<div class="form-group">
-    							<label for="inputEmail" class="col-sm-4 col-form-label">User Id</label>
-   								
-      							<input type="text" class="form-control" id="inputEmail" placeholder="userid" name="userid">
-    							
-  								</div>
+             </tr>
+             
+        </table>
+    </div>
+        <div class="container" style="margin: 0 auto; padding: 5% 30%">
+        <center>
+        	<a type="submit" role="button" class="btn btn-primary" href="PatientRecord.php">View Record</a> 
+        </center>
+        </div>      
+        
+<?php        
+}   
+     
+}
+?>  
 
-  								<div class="form-group">
-    							<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
-    							
-      							<input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password">
-    							
-  								</div>
-								
-								<div class="form-group">
-								<label class="my-1 mr-2 col-sm-4 col-form-label" for="inlineFormCustomSelect">Type Of User</label>
-  								
-  								<select class="form-control form-control-sm" id="inlineFormCustomSelect" name="type">
-    								       <option>Doctor</option>  
-    									   <option>Patient</option>
-    							</select>
-    							
- 								</div>
-
- 								<div class="form-group">
-								
-								<button type="Submit" name="Signup" value="Signup" class="btn btn-success">Sign Up</button>
-								</div>
-							</form>
-
-    						</div>	
-    						
-  							</div>
-  							</div>
-						</div>
-					</di>
-				</div>	
-			</section>
+</div>
 
 
 
-							
-					
-					
 
-<footer class="footer-area section-gap">
+
+
+
+			<footer class="footer-area section-gap">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-4  col-md-6">
@@ -351,7 +238,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="js/jquery.nice-select.min.js"></script>	
 			<script src="js/owl.carousel.min.js"></script>									
 			<script src="js/mail-script.js"></script>	
-			<script src="js/login.js"></script>
-
-</body>
-</html>
+			<script src="js/main.js"></script>	
+		</body>
+	</html>
