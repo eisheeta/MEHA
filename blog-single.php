@@ -37,11 +37,10 @@
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
 			      <div id="logo">
-			        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+			        <a href="index.php"><img src="img/logo.png" alt="" title="" /></a>
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-
 			          <li><a href="index.php">Home</a></li>
 			          <li><a href="about.php">About</a></li>
 			          <li><a href="doctors.php">Doctors</a></li>
@@ -60,12 +59,11 @@
 					            <ul>
 					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
 					              <li><a href="treatment.php">Treatment</a></li>
-
 					            </ul>
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
-			          <li><a href="contact.html">Contact</a></li>
+			          <li><a href="contact.php">Contact</a></li>
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -81,7 +79,7 @@
 							<h1 class="text-white">
 								Blog Details Page				
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="blog-home.html">Blog </a> <span class="lnr lnr-arrow-right"></span> <a href="blog-single.html"> Blog Details Page</a></p>
+							<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="blog-home.php">Blog </a> <span class="lnr lnr-arrow-right"></span> <a href="blog-single.html"> Blog Details Page</a></p>
 						</div>	
 					</div>
 				</div>
@@ -326,7 +324,7 @@
 												<img class="img-fluid" src="img/blog/pp1.jpg" alt="">
 											</div>
 											<div class="details">
-												<a href="blog-single.html"><h6>Space The Final Frontier</h6></a>
+												<a href="blog-single.php"><h6>Space The Final Frontier</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -335,7 +333,7 @@
 												<img class="img-fluid" src="img/blog/pp2.jpg" alt="">
 											</div>
 											<div class="details">
-												<a href="blog-single.html"><h6>The Amazing Hubble</h6></a>
+												<a href="blog-single.php"><h6>The Amazing Hubble</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -344,7 +342,7 @@
 												<img class="img-fluid" src="img/blog/pp3.jpg" alt="">
 											</div>
 											<div class="details">
-												<a href="blog-single.html"><h6>Astronomy Or Astrology</h6></a>
+												<a href="blog-single.php"><h6>Astronomy Or Astrology</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -353,7 +351,7 @@
 												<img class="img-fluid" src="img/blog/pp4.jpg" alt="">
 											</div>
 											<div class="details">
-												<a href="blog-single.html"><h6>Asteroids telescope</h6></a>
+												<a href="blog-single.php"><h6>Asteroids telescope</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>															

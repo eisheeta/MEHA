@@ -34,7 +34,6 @@
 		<body>	
 		  <header id="header">
 	  
-
 		    	
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
@@ -61,14 +60,11 @@
 					            <ul>
 					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
 					              <li><a href="treatment.php">Treatment</a></li>
-
 					            </ul>
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
-
 			          <li><a href="contact.php">Contact</a></li>
-
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -84,7 +80,7 @@
 							<h1 class="text-white">
 								Elements		
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="elements.html"> Elements</a></p>
+							<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="elements.php"> Elements</a></p>
 						</div>	
 					</div>
 				</div>

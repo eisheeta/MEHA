@@ -36,11 +36,10 @@
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
 			      <div id="logo">
-			        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+			        <a href="index.php"><img src="img/logo.png" alt="" title="" /></a>
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-
 			          <li><a href="index.php">Home</a></li>
 			          <li><a href="about.php">About</a></li>
 			  		  <li><a href="doctors.php">Doctors</a></li>
@@ -48,27 +47,22 @@
 			            <ul>
 			              <li><a href="blog-home.php">Blog Home</a></li>
 			              <li><a href="blog-single.php">Blog Single</a></li>
-
 			            </ul>
 			          </li>	
 			         <li class="menu-has-children"><a href="">Features</a>
 			            <ul>
-
 			            	  <li><a href="gapi.php">Hospitals Near You</a></li>
 			            	  <li><a href="bmi.php">BMI Calculator</a></li>
-
 			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
 					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
 					            <ul>
 					               <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
-
 					              <li><a href="treatment.php">Treatment</a></li>
-
 					            </ul>
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
-			          <li><a href="contact.html">Contact</a></li>
+			          <li><a href="contact.php">Contact</a></li>
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -88,7 +82,7 @@
 							<p class="text-white">
 								There is a moment in the life of any aspiring astronomer that it is time to buy that first
 							</p>
-							<a href="blog-single.html" class="primary-btn">View More</a>
+							<a href="blog-single.php" class="primary-btn">View More</a>
 						</div>	
 					</div>
 				</div>
@@ -178,11 +172,11 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="img/blog/feature-img1.jpg" alt="">
 									</div>
-									<a class="posts-title" href="blog-single.html"><h3>Astronomy Binoculars A Great Alternative</h3></a>
+									<a class="posts-title" href="blog-single.php"><h3>Astronomy Binoculars A Great Alternative</h3></a>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
 									</p>
-									<a href="blog-single.html" class="primary-btn">View More</a>
+									<a href="blog-single.php" class="primary-btn">View More</a>
 								</div>
 							</div>
 							<div class="single-post row">
@@ -203,11 +197,11 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="img/blog/feature-img2.jpg" alt="">
 									</div>
-									<a class="posts-title" href="blog-single.html"><h3>The Basics Of Buying A Telescope</h3></a>
+									<a class="posts-title" href="blog-single.php"><h3>The Basics Of Buying A Telescope</h3></a>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
 									</p>
-									<a href="blog-single.html" class="primary-btn">View More</a>
+									<a href="blog-single.php" class="primary-btn">View More</a>
 								</div>
 							</div>
 							<div class="single-post row">
@@ -228,11 +222,11 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="img/blog/feature-img3.jpg" alt="">
 									</div>
-									<a class="posts-title" href="blog-single.html"><h3>The Glossary Of Telescopes</h3></a>
+									<a class="posts-title" href="blog-single.php"><h3>The Glossary Of Telescopes</h3></a>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
 									</p>
-									<a href="blog-single.html" class="primary-btn">View More</a>
+									<a href="blog-single.php" class="primary-btn">View More</a>
 								</div>
 							</div>
 							<div class="single-post row">
@@ -253,11 +247,11 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="img/blog/feature-img4.jpg" alt="">
 									</div>
-									<a class="posts-title" href="blog-single.html"><h3>The Night Sky</h3></a>
+									<a class="posts-title" href="blog-single.php"><h3>The Night Sky</h3></a>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
 									</p>
-									<a href="blog-single.html" class="primary-btn">View More</a>
+									<a href="blog-single.php" class="primary-btn">View More</a>
 								</div>
 							</div>
 							<div class="single-post row">
@@ -278,11 +272,11 @@
 									<div class="feature-img">
 										<img class="img-fluid" src="img/blog/feature-img5.jpg" alt="">
 									</div>
-									<a class="posts-title" href="blog-single.html"><h3>Telescopes 101</h3></a>
+									<a class="posts-title" href="blog-single.php"><h3>Telescopes 101</h3></a>
 									<p class="excert">
 										MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
 									</p>
-									<a href="blog-single.html" class="primary-btn">View More</a>
+									<a href="blog-single.php" class="primary-btn">View More</a>
 								</div>
 							</div>														
 		                    <nav class="blog-pagination justify-content-center d-flex">
@@ -341,7 +335,7 @@
 												<img class="img-fluid" src="img/blog/pp1.jpg" alt="">
 											</div>
 											<div class="details">
-												<a href="blog-single.html"><h6>Space The Final Frontier</h6></a>
+												<a href="blog-single.php"><h6>Space The Final Frontier</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -350,7 +344,7 @@
 												<img class="img-fluid" src="img/blog/pp2.jpg" alt="">
 											</div>
 											<div class="details">
-												<a href="blog-single.html"><h6>The Amazing Hubble</h6></a>
+												<a href="blog-single.php"><h6>The Amazing Hubble</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -359,7 +353,7 @@
 												<img class="img-fluid" src="img/blog/pp3.jpg" alt="">
 											</div>
 											<div class="details">
-												<a href="blog-single.html"><h6>Astronomy Or Astrology</h6></a>
+												<a href="blog-single.php"><h6>Astronomy Or Astrology</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>
@@ -368,7 +362,7 @@
 												<img class="img-fluid" src="img/blog/pp4.jpg" alt="">
 											</div>
 											<div class="details">
-												<a href="blog-single.html"><h6>Asteroids telescope</h6></a>
+												<a href="blog-single.php"><h6>Asteroids telescope</h6></a>
 												<p>02 Hours ago</p>
 											</div>
 										</div>															
