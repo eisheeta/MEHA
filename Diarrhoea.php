@@ -4,7 +4,7 @@
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
+		
 		<!-- Author Meta -->
 		<meta name="author" content="colorlib">
 		<!-- Meta Description -->
@@ -33,95 +33,66 @@
 		</head>
 		<body>	
 		  <header id="header">
+	  		
+		  	
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
 			      <div id="logo">
-			        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+			        <a href="index.php"><img src="img/logo.png" alt="" title="" /></a>
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-			          <li><a href="index.html">Home</a></li>
-			          <li><a href="about.html">About</a></li>
-			          
-			          <li><a href="doctors.html">Doctors</a></li>
-			          
+			           <li><a href="index.php">Home</a></li>
+			          <li><a href="about.php">About</a></li>
+			          <li><a href="doctors.php">Doctors</a></li>
 			          <li class="menu-has-children"><a href="">Blog</a>
 			            <ul>
-			              <li><a href="blog-home.html">Blog Home</a></li>
-			              <li><a href="blog-single.html">Blog Single</a></li>
+			              <li><a href="blog-home.php">Blog Home</a></li>
+			              <li><a href="blog-single.php">Blog Single</a></li>
 			            </ul>
 			          </li>	
-			         <li class="menu-has-children"><a href="">Features</a>
+			          <li class="menu-has-children"><a href="">Features</a>
 			            <ul>
-			            	  <li><a href="gapi.html">Hospitals Near You</a></li>
-			            	  <li><a href="bmi.html">BMI Calculator</a></li>
-			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html">Blood Banks Near You</a></li>
+			            	  <li><a href="gapi.php">Hospitals Near You</a></li>
+			            	  <li><a href="bmi.php">BMI Calculator</a></li>
+			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
 					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
 					            <ul>
-					              <li><a href="#">Symptom Checker</a></li>
-					              <li><a href="#">Treatment</a></li>
+					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
+					              <li><a href="treatment.php">Treatment</a></li>
 					            </ul>
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
-			          <li><a href="contact.html">Contact</a></li>
+			          <li><a href="contact.php">Contact</a></li>
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
 		    </div>
 		  </header><!-- #header -->
-
+			  
 			<!-- start banner Area -->
-			<section class="banner-area relative" id="home">
-				<div class="overlay overlay-bg"></div>	
-				<div class="container">
-					<div class="row fullscreen d-flex align-items-center justify-content-center">
-						<div class="banner-content col-lg-8 col-md-12">
-							<h1>
-								We Care for Your Health
-								Every Moment		
-							</h1>
-							<p class="pt-10 pb-10 text-white">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
-							</p>
-							<a href="#" class="primary-btn text-uppercase">Get Started</a>
-						</div>										
+			<section class="banner-area relative about-banner" id="home">	
+				<div class="overlay overlay-bg"></div>
+				<div class="container">				
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<h1 class="text-white">
+											
+								Treatment Chart For Diarrhoea		
+							</h1>	
+							
+						</div>	
 					</div>
-				</div>					
+				</div>
 			</section>
-			<!-- End banner Area -->
+			<!-- End banner Area -->	
 
 			<!-- Start appointment Area -->
-			<section class="appointment-area">			
-				<div class="container">
-					<div class="row justify-content-between align-items-center pb-120 appointment-wrap">
-						<div class="col-lg-5 col-md-6 appointment-left">
-							
-						</div>
-						
-						<div class = "container">	
-								 <center> <h1 class="pb-20 text-center mb-30">Treatment Chart</h1>  <center>
-								<div class = "container">
-
-									<div class="dropdown">
-     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Know Your Disease</button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="Dengue.html">Dengue</a>
-                       <a class="dropdown-item" href="Diarrhoea.html">Diarrhoea</a>
-					   
-                   <a class="dropdown-item" href="Diabetes.html">Type 2 Diabetes</a>
-  </div>
-</div>
-								</div>	
-
-								</div>
-								
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>	
-			</section>
+				<div class = "container">
+			
+			<center><img src="img/diarrhoea.jpg" alt="" title="" ></center>
+			</div>
 			<!-- End appointment Area -->
 
 			<!-- Start facilities Area -->
