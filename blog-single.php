@@ -41,6 +41,7 @@
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
+
 			          <li><a href="index.php">Home</a></li>
 			          <li><a href="about.php">About</a></li>
 			          <li><a href="doctors.php">Doctors</a></li>
@@ -59,6 +60,7 @@
 					            <ul>
 					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
 					              <li><a href="treatment.php">Treatment</a></li>
+
 					            </ul>
 					          </li>					                		
 			            </ul>

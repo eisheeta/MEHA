@@ -33,6 +33,7 @@
 		</head>
 		<body>	
 		  <header id="header">
+
 		    	
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
@@ -59,11 +60,14 @@
 					            <ul>
 					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
 					              <li><a href="treatment.php">Treatment</a></li>
+
 					            </ul>
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
+
 			          <li><a href="contact.php">Contact</a></li>
+
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>

@@ -33,6 +33,7 @@
 		</head>
 		<body>	
 		  <header id="header">
+
 		   	
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
@@ -59,11 +60,14 @@
 					            <ul>
 					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
 					              <li><a href="treatment.php">Treatment</a></li>
+
 					            </ul>
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
+
 			          <li><a href="contact.php">Contact</a></li>
+
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -105,10 +109,12 @@
 									<div class="dropdown">
      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Know Your Disease</button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
                       <a class="dropdown-item" href="Dengue.php">Dengue</a>
                        <a class="dropdown-item" href="Diarrhoea.php">Diarrhoea</a>
 					   
                    <a class="dropdown-item" href="Diabetes.php">Type 2 Diabetes</a>
+
   </div>
 </div>
 								</div>	

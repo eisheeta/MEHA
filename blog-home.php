@@ -40,6 +40,7 @@
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
+
 			          <li><a href="index.php">Home</a></li>
 			          <li><a href="about.php">About</a></li>
 			  		  <li><a href="doctors.php">Doctors</a></li>
@@ -47,17 +48,22 @@
 			            <ul>
 			              <li><a href="blog-home.php">Blog Home</a></li>
 			              <li><a href="blog-single.php">Blog Single</a></li>
+
 			            </ul>
 			          </li>	
 			         <li class="menu-has-children"><a href="">Features</a>
 			            <ul>
+
 			            	  <li><a href="gapi.php">Hospitals Near You</a></li>
 			            	  <li><a href="bmi.php">BMI Calculator</a></li>
+
 			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
 					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
 					            <ul>
 					               <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
+
 					              <li><a href="treatment.php">Treatment</a></li>
+
 					            </ul>
 					          </li>					                		
 			            </ul>
