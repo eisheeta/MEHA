@@ -33,50 +33,37 @@
 		</head>
 		<body>	
 		  <header id="header">
+		   	
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
 			      <div id="logo">
-			        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+			        <a href="index.php"><img src="img/logo.png" alt="" title="" /></a>
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-			          <li><a href="index.html">Home</a></li>
-			          <li><a href="about.html">About</a></li>
-			          
-			          <li><a href="doctors.html">Doctors</a></li>
-			          
+			           <li><a href="index.php">Home</a></li>
+			          <li><a href="about.php">About</a></li>
+			          <li><a href="doctors.php">Doctors</a></li>
 			          <li class="menu-has-children"><a href="">Blog</a>
 			            <ul>
-			              <li><a href="blog-home.html">Blog Home</a></li>
-			              <li><a href="blog-single.html">Blog Single</a></li>
+			              <li><a href="blog-home.php">Blog Home</a></li>
+			              <li><a href="blog-single.php">Blog Single</a></li>
 			            </ul>
 			          </li>	
-			         <li class="menu-has-children"><a href="">Features</a>
+			          <li class="menu-has-children"><a href="">Features</a>
 			            <ul>
-			            	  <li><a href="gapi.html">Hospitals Near You</a></li>
-			            	  <li><a href="bmi.html">BMI Calculator</a></li>
-			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html">Blood Banks Near You</a></li>
+			            	  <li><a href="gapi.php">Hospitals Near You</a></li>
+			            	  <li><a href="bmi.php">BMI Calculator</a></li>
+			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
 					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
 					            <ul>
-
 					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
 					              <li><a href="treatment.php">Treatment</a></li>
-
-
-					              <li><a href="#">Symptom Checker</a></li>
-					              <li><a href="#">Treatment</a></li>
-
 					            </ul>
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
-
-
 			          <li><a href="contact.php">Contact</a></li>
-
-
-			          <li><a href="contact.html">Contact</a></li>
-
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -118,19 +105,10 @@
 									<div class="dropdown">
      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Know Your Disease</button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-
                       <a class="dropdown-item" href="Dengue.php">Dengue</a>
                        <a class="dropdown-item" href="Diarrhoea.php">Diarrhoea</a>
 					   
                    <a class="dropdown-item" href="Diabetes.php">Type 2 Diabetes</a>
-
-
-                      <a class="dropdown-item" href="Dengue.html">Dengue</a>
-                       <a class="dropdown-item" href="Diarrhoea.html">Diarrhoea</a>
-					   
-                   <a class="dropdown-item" href="Diabetes.html">Type 2 Diabetes</a>
-
   </div>
 </div>
 								</div>	

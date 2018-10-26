@@ -168,59 +168,74 @@ if(isset($_POST["login"])){
 			</section>
 
 
-			<section class="loginclass">
+			<section class="">
 				<div class="container">
 					<div class="row align-items-center">
-						<div class="col-lg-6" style="width: 30%; margin: 0 auto;">
-							<h1>Log In</h1>
-							<form action="login.php", method="post">
+						<div class="col-lg-6 loginclass" style="width: 30%;">
+
+							<div class="card text-center">
+  							<div class="card-header">
+    							Log In
+  							</div>
+  							<div class="card-body">
+    						<h5 class="card-title">Log in to view your medical history</h5>
+    						<div style="margin: 0 auto;">
+
+    							<form action="login.php", method="post" style="margin: 0 auto;">
 
 								<div class="form-group">
     							<label for="inputEmail3" class="col-sm-4 col-form-label">User Id</label>
-   								<div class="col-sm-8">
+   								
       							<input type="text" class="form-control" id="inputEmail3" placeholder="userid" name="userid">
-    							</div>
+    							
   								</div>
 
   								<div class="form-group">
     							<label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
-    							<div class="col-sm-8">
+    							
       							<input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
-    							</div>
+    							
   								</div>
 								
 								<div class="form-group">
 								<label class="my-1 mr-2 col-sm-4 col-form-label" for="inlineFormCustomSelectPref">Type Of User</label>
-  								<div class="col-sm-8">
+  								
   								<select class="form-control form-control-sm" id="inlineFormCustomSelectPref" name="type">
     								       <option>Doctor</option>  
     									   <option>Patient</option>
     							</select>
-    							</div>
+    							
  								</div>
 
 								<div class="form-group">
-								<div class="col-sm-10">
-								<button type="Submit" name="login" value="Login" class="btn btn-primary">Log In</button>
-								</div>
+								
+								<button type="Submit" name="login" value="Login" class="btn btn-success">Log In</button>
+								
 								</div>
 							</form>
+
+
+
+    						</div>	
+    						
+  							</div>
+  							</div>
 						</div>
 					</di>
 				</div>	
 			</section>
 
 
-<!-- login form -->
-<form action="login.php", method="post">
-	User id <input type="text" name="userid">
-	Password <input type="Password" name="password">
-	Type <select name="type">
-		<option>Doctor</option>
-		<option>Patient</option>
-	</select>
-	<input type="Submit" Name="Signup" value="Signup"><br>
-</form>
+
+				<form action="login.php", method="post">
+					User id <input type="text" name="userid">
+					Password <input type="Password" name="password">
+					Type <select name="type">
+					<option>Doctor</option>
+					<option>Patient</option>
+					</select>
+					<input type="Submit" Name="Signup" value="Signup"><br>
+					</form>
 
 <footer class="footer-area section-gap">
 				<div class="container">
