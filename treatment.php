@@ -33,11 +33,6 @@
 		</head>
 		<body>	
 		  <header id="header">
-<<<<<<< HEAD:treatment.php
-
-		   	
-=======
->>>>>>> parent of 0482d5a... php added:treatment.html
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
 			      <div id="logo">
@@ -63,25 +58,25 @@
 			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html">Blood Banks Near You</a></li>
 					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
 					            <ul>
-<<<<<<< HEAD:treatment.php
+
 					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
 					              <li><a href="treatment.php">Treatment</a></li>
 
-=======
+
 					              <li><a href="#">Symptom Checker</a></li>
 					              <li><a href="#">Treatment</a></li>
->>>>>>> parent of 0482d5a... php added:treatment.html
+
 					            </ul>
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
-<<<<<<< HEAD:treatment.php
+
 
 			          <li><a href="contact.php">Contact</a></li>
 
-=======
+
 			          <li><a href="contact.html">Contact</a></li>
->>>>>>> parent of 0482d5a... php added:treatment.html
+
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -123,19 +118,19 @@
 									<div class="dropdown">
      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Know Your Disease</button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-<<<<<<< HEAD:treatment.php
+
 
                       <a class="dropdown-item" href="Dengue.php">Dengue</a>
                        <a class="dropdown-item" href="Diarrhoea.php">Diarrhoea</a>
 					   
                    <a class="dropdown-item" href="Diabetes.php">Type 2 Diabetes</a>
 
-=======
+
                       <a class="dropdown-item" href="Dengue.html">Dengue</a>
                        <a class="dropdown-item" href="Diarrhoea.html">Diarrhoea</a>
 					   
                    <a class="dropdown-item" href="Diabetes.html">Type 2 Diabetes</a>
->>>>>>> parent of 0482d5a... php added:treatment.html
+
   </div>
 </div>
 								</div>	
