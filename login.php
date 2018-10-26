@@ -15,9 +15,9 @@ if(!empty($_POST["userid"])&&!empty($_POST["password"])){
 $Userid=$_POST["userid"];
 $Password=$_POST["password"];
 $Type=$_POST["type"];
-
-$Query="INSERT INTO login(userid, password, user_type)
-        VALUES('$Userid', '$Password', '$Type')";
+$Sex=$_POST["sex"];
+$Query="INSERT INTO login(userid, password, user_type, sex)
+        VALUES('$Userid', '$Password', '$Type', '$Sex')";
     $Execute=mysqli_query($Connection, $Query);
 if($Execute){
 	   
@@ -201,6 +201,7 @@ if(isset($_POST["login"])){
 								<label class="my-1 mr-2 col-sm-4 col-form-label" for="inlineFormCustomSelectPref">Type Of User</label>
   								
   								<select class="form-control form-control-sm" id="inlineFormCustomSelectPref" name="type">
+    								       <option selected disabled>User type</option>
     								       <option>Doctor</option>  
     									   <option>Patient</option>
     							</select>
@@ -258,8 +259,21 @@ if(isset($_POST["login"])){
 								<label class="my-1 mr-2 col-sm-4 col-form-label" for="inlineFormCustomSelect">Type Of User</label>
   								
   								<select class="form-control form-control-sm" id="inlineFormCustomSelect" name="type">
+    								       <option selected disabled>User type</option>
     								       <option>Doctor</option>  
     									   <option>Patient</option>
+    							</select>
+    							
+ 								</div>
+
+ 								<div class="form-group">
+								<label class="my-1 mr-2 col-sm-4 col-form-label" for="tomS">Sex</label>
+  								
+  								<select class="form-control form-control-sm" id="tomS" name="sex">
+    								       <option selected disabled>Select your Sex</option>
+    								       <option>Male</option>  
+    									   <option>Female</option>
+    									   <option>Others</option>
     							</select>
     							
  								</div>
