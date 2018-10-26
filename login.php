@@ -169,38 +169,39 @@ if(isset($_POST["login"])){
 
 
 			<section class="loginclass">
-				<div class="container-fluid">
+				<div class="container">
 					<div class="row align-items-center">
-						<div class="col-lg-6">
+						<div class="col-lg-6" style="width: 30%; margin: 0 auto;">
 							<h1>Log In</h1>
 							<form action="login.php", method="post">
 
-								<div class="form-group row">
-    							<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-   								<div class="col-sm-10">
+								<div class="form-group">
+    							<label for="inputEmail3" class="col-sm-4 col-form-label">User Id</label>
+   								<div class="col-sm-8">
       							<input type="text" class="form-control" id="inputEmail3" placeholder="userid" name="userid">
     							</div>
   								</div>
 
-  								<div class="form-group row">
-    							<label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-    							<div class="col-sm-10">
+  								<div class="form-group">
+    							<label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+    							<div class="col-sm-8">
       							<input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
     							</div>
   								</div>
 								
-								<div class="form-group row">
-								<label class="my-1 mr-2 col-sm-2 col-form-label" for="inlineFormCustomSelectPref">Type Of User</label>
-  								<select class="my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="type">
-    										<option selected>Choose...</option>
-    										<option>Doctor</option>
-    										<option>Patient</option>
+								<div class="form-group">
+								<label class="my-1 mr-2 col-sm-4 col-form-label" for="inlineFormCustomSelectPref">Type Of User</label>
+  								<div class="col-sm-8">
+  								<select class="form-control form-control-sm" id="inlineFormCustomSelectPref" name="type">
+    								       <option>Doctor</option>  
+    									   <option>Patient</option>
     							</select>
+    							</div>
  								</div>
 
-								<div class="form-group row">
+								<div class="form-group">
 								<div class="col-sm-10">
-							<button type="Submit" name="login" value="Login" class="btn btn-primary">Log In</button>
+								<button type="Submit" name="login" value="Login" class="btn btn-primary">Log In</button>
 								</div>
 								</div>
 							</form>
