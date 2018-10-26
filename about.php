@@ -93,7 +93,7 @@
 						<div class="menu-content pb-70 col-lg-8">
 							<div class="title text-center">
 								<h1 class="mb-10">Medical and Health Application</h1>
-								<p>Who are in extremely love with eco friendly system.</p>
+								<p>One place to store all your medical data and simplify your routine medical check-ups</p>
 							</div>
 						</div>
 					</div>							

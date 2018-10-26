@@ -83,7 +83,7 @@
 							<p class="pt-10 pb-10 text-white">
 								A tool for all the users as well as medical professionals to centralize and simplify the management of health and medical records, and improve the transparency and efficiency when it comes to diagnosing and treating patients by different medical professionals.
 							</p>
-							<a href="#" class="primary-btn text-uppercase">Get Started</a>
+							<a href="login.php" class="primary-btn text-uppercase">LOG IN OR SIGN UP</a>
 						</div>										
 					</div>
 				</div>					
