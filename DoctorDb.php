@@ -97,10 +97,21 @@ $x= $_SESSION['id'];
 				</div>
 			</section>
 
-<!-- content -->
-<div class="container">
+	
 
-<section class="info-area section-gap">
+<!-- content -->
+<div style="padding: 3%" class="container">
+
+	<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Search your patients medical records</h1>
+								<p>Fill patient's id and click the search button. The data will appear if the access is granted.</p>
+							</div>
+						</div>
+					</div>
+
+<section style="padding: 3%" class="info-area">
 				<div class="container">
 					<center>
 					<div class="row align-items-center">
@@ -137,22 +148,23 @@ if(isset($_GET['SearchButton'])){
           $_SESSION['pid'] = $Id;
         ?>
         <div style="padding: 0 30%;">
-        <table width="100%" border="1" align="center">
-            
+        <table class="table" width="100%" border="1" align="center">
+            <thead class="thead-dark">
             <tr>
                 <th><center>ID</center></th>
                 <th><center>Patient Name</center></th>
                 
             </tr>
+        </thead>
+        <tbody>
             <tr>
                 <td><center><?php echo $Id;?></center></td>
                 <td><center><?php echo $Name;?></center></td>
-
              </tr>
-             
+        </tbody>     
         </table>
     </div>
-        <div class="container" style="margin: 0 auto; padding: 5% 30%">
+        <div class="container" style="margin: 0 auto; padding: 0% 30% 5%">
         <center>
         	<a type="submit" role="button" class="btn btn-primary" href="PatientRecord.php">View Record</a> 
         </center>
@@ -165,10 +177,6 @@ if(isset($_GET['SearchButton'])){
 ?>  
 
 </div>
-
-
-
-
 
 
 
