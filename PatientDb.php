@@ -136,8 +136,9 @@ else if(isset($_POST["deny"])){
 
 <center>
 <form method="post" action="PatientDb.php">
-<input type="submit" class="btn btn-success" name="grant" value="Grant Access">
-<input type="submit"  class="btn btn-success" name="deny" value="Deny Access">
+
+<input id="but1" type="submit" class="btn btn-success" name="grant" value="Grant Access">
+<input id="but2"  type="submit"  class="btn btn-success" name="deny" value="Deny Access">
 </form>
 </center>
 

@@ -328,11 +328,11 @@ while($DataRows=mysqli_fetch_array($Execute)){
 <!-- put css and styling to display record -->
 
 
- <div class="card-text"> Name : <?php echo $Name;?></div>
-<div class="card-text"> Age : <?php echo $Age;?></div>
- <div class="card-text">Sex : <?php echo $Sex;?></div>
-<div class="card-text"> Date : <?php echo $Date;?></div>
-<div class="card-text"> Doctor Name : <?php echo $Doctor_name;?></div>
+ <div class="card-text"> Name: <?php echo $Name;?></div>
+<div class="card-text"> Age: <?php echo $Age;?></div>
+ <div class="card-text">Sex: <?php echo $Sex;?></div>
+<div class="card-text"> Date: <?php echo $Date;?></div>
+<div class="card-text"> Doctor Name: <?php echo $Doctor_name;?></div>
 <div class="card-text"> Specialty : <?php echo $Specialty;?></div>
 
 <div class="card-text"> 
@@ -357,6 +357,7 @@ while($DataRows=mysqli_fetch_array($Execute)){
 ?>
 </div>
 
+<hr style="width:100%;">
 
 <?php } ?>
 
