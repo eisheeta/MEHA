@@ -12,20 +12,35 @@ function redirect_to($NewLocation){
 
 if(isset($_POST["Signup"])){
 if(!empty($_POST["userid"])&&!empty($_POST["password"])){
-$Userid=$_POST["userid"];
-$Password=$_POST["password"];
-$Type=$_POST["type"];
-$Sex=$_POST["sex"];
-$Query="INSERT INTO login(userid, password, user_type, sex)
-        VALUES('$Userid', '$Password', '$Type', '$Sex')";
-    $Execute=mysqli_query($Connection, $Query);
-if($Execute){
+
+		$Userid=$_POST["userid"];
+			$Password=$_POST["password"];
+			$Type=$_POST["type"];
+			$Sex=$_POST["sex"];
+	    $user_check_query = "SELECT * FROM login WHERE userid='$Userid' AND password='$Password' AND user_type='$Type' LIMIT 1";
+		
+		$result = mysqli_query($Connection, $user_check_query); 
+        $user = mysqli_fetch_assoc($result);
+        if($user){ ?>
+
+	        	<script>
+	        	alert("User already exists");
+	        	</script>
+<?php
+        }
+        else{
+			
+			$Query="INSERT INTO login(userid, password, user_type, sex)
+      		  VALUES('$Userid', '$Password', '$Type', '$Sex')";
+    		$Execute=mysqli_query($Connection, $Query);
+			if($Execute){
 	   
-    if($Type=="Doctor")
+    		if($Type=="Doctor")
      			redirect_to("DoctorDb.php");
      	    else
      	    	redirect_to("PatientDb.php");
-}
+            }
+          }
 }
 else{
     echo '<span>Please fill all fields</span>';

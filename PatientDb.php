@@ -167,7 +167,7 @@ while($DataRows=mysqli_fetch_array($Execute)){
 <div style="margin: 3% auto;">
   <div class="card text-center">
   <div class="card-header">
-Medical History
+<h1>Medical History</h1>
 </div>
 
 <div class="card-body">
@@ -272,7 +272,10 @@ while($DataRows=mysqli_fetch_array($Execute)){
  if(!empty($Comment)){
   echo "Test Prescribed: ".$Comment;
  }
-?></div>
+
+?>
+<hr style="width: 100%;">
+</div>
 
 
 <?php } ?>
