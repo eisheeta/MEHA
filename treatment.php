@@ -1,3 +1,9 @@
+<?php
+session_start();
+$abc = $_SESSION['utype'];
+$user = $_SESSION['usern'];
+?>
+
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -41,9 +47,14 @@
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-			           <li><a href="index.php">Home</a></li>
-			          <li><a href="about.php">About</a></li>
-			          <li><a href="doctors.php">Doctors</a></li>
+			        	 <li><a href="#"><span><i class="fa fa-user" aria-hidden="true"></i><?php echo $user;?><span></a><li>
+			           
+			           <?php if($abc=="Doctor"){ ?>
+			  		  <li><a href="DoctorDb.php">Dashboard</a></li>
+			  		  <?php } 
+			  		   else{ ?>
+			  		  <li><a href="PatientDb.php">Dashboard</a></li>
+			  		  <?php } ?>
 			          <li class="menu-has-children"><a href="">Blog</a>
 			            <ul>
 			              <li><a href="blog-home.php">Blog Home</a></li>
@@ -64,6 +75,7 @@
 			            </ul>
 			          </li>					          					          		          
 			          <li><a href="contact.php">Contact</a></li>
+			          <li><a href="index.php">Log out</a></li>
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -77,13 +89,10 @@
 					<div class="row fullscreen d-flex align-items-center justify-content-center">
 						<div class="banner-content col-lg-8 col-md-12">
 							<h1>
-								We Care for Your Health
-								Every Moment		
+								Treatment Chart For Diseases		
 							</h1>
-							<p class="pt-10 pb-10 text-white">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
-							</p>
-							<a href="#" class="primary-btn text-uppercase">Get Started</a>
+							
+							
 						</div>										
 					</div>
 				</div>					
@@ -91,7 +100,7 @@
 			<!-- End banner Area -->
 
 			<!-- Start appointment Area -->
-			<section class="appointment-area">			
+			<section class="appointment-area" style="margin: 8% auto;">			
 				<div class="container">
 					<div class="row justify-content-between align-items-center pb-120 appointment-wrap">
 						<div class="col-lg-5 col-md-6 appointment-left">

@@ -1,9 +1,91 @@
 	<?php
 session_start();
+$a=$_SESSION['id'];
+$b= $_SESSION['pid'];
 $abc = $_SESSION['utype'];
+$user = $_SESSION['usern'];
+
+function redirect_to($NewLocation){
+    header("Location:".$NewLocation);
+   	exit;
+}
 ?>
 
-	<!DOCTYPE html>
+<?php
+ $Connection = mysqli_connect('localhost', 'root', '');
+ $Selected = mysqli_select_db($Connection, 'health');
+
+if(isset($_POST["submit"])){
+if(!empty($_POST["name"])&&!empty($_POST["age"])){
+ 	$Name=$_POST['name'];
+    $Age=$_POST['age'];
+    $Sex=$_POST['sex'];
+    $Doctor_name=$_POST['dname'];
+    $Specialty=$_POST['specialty'];
+    $Med1=$_POST['med1'];
+    $Med2=$_POST['med2'];
+    $Med3=$_POST['med3'];
+    $TestP=$_POST['testp'];
+    $Comment=$_POST['comment'];
+    $Date= $_POST['date'];
+
+$Query="INSERT INTO prescription( name, age, sex, p_id, d_id, doctor_name, specialty, med1, med2, med3, test_prescribed, comment, ddate)
+        VALUES('$Name', '$Age', '$Sex', '$b', '$a', '$Doctor_name', '$Specialty', '$Med1', '$Med2','$Med3', '$TestP', '$Comment', '$Date' )";
+    $Execute=mysqli_query($Connection, $Query);
+
+
+
+
+
+         $user_check_query = "SELECT tflag1, tflag2, tflag3 FROM record WHERE p_id='$b' LIMIT 1";
+		 $Execute1=mysqli_query($Connection, $user_check_query);
+		 $Tflag1 = 0;
+		 $Tflag2 = 0;
+		 $Tflag3 = 0;
+		 
+
+        $DataRows=mysqli_fetch_array($Execute1);
+        $Tflag1 = $DataRows['tflag1'];
+		 $Tflag2 = $DataRows['tflag2'];
+		 $Tflag3 = $DataRows['tflag3'];
+
+
+         if($Tflag1==0){
+         	echo 0;
+         	$Query1="UPDATE record SET test1 = '$TestP', tflag1 = 1 WHERE p_id = '$b'";
+     		$Execute1=mysqli_query($Connection, $Query1);
+         }
+         else if($Tflag2==0){
+         	echo 4;
+         	$Query2="UPDATE record SET test2 = '$TestP', tflag2 = 1 WHERE p_id = '$b'";
+     		$Execute1=mysqli_query($Connection, $Query2);
+         }
+         else if($Tflag3==0){
+         	$Query3="UPDATE record SET test3 = '$TestP', tflag3 = 1 WHERE p_id = '$b'";
+     		$Execute1=mysqli_query($Connection, $Query3);
+         }
+
+      // $Query2="UPDATE record SET test2 = '$TestP', tflag2=1 WHERE p_id = '$b'";
+     	// 	$Execute1=mysqli_query($Connection, $Query2);
+     	// 	if($Execute1){
+     	// 		echo "done";
+     	// 	}
+
+
+if($Execute){
+	   
+     redirect_to("PatientRecord.php");
+
+    echo '<span>Welcome '.$Userid;
+}
+}
+else{
+    echo '<span>Please fill all fields</span>';
+}
+} 
+?>
+
+<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
 		<!-- Mobile Specific Meta -->
@@ -38,7 +120,6 @@ $abc = $_SESSION['utype'];
 		</head>
 		<body>	
 		  <header id="header">
-
 		    	
 		    <div class="container main-menu">
 		    	<div class="row align-items-center justify-content-between d-flex">
@@ -47,9 +128,35 @@ $abc = $_SESSION['utype'];
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-			            <li><a href="index.php">Home</a></li>
-			            <li><a href="contact.php">Contact</a></li>
+			           <li><a href="#"><span><i class="fa fa-user" aria-hidden="true"></i><?php echo $user;?><span></a><li>
 
+			           <?php if($abc=="Doctor"){ ?>
+			  		  <li><a href="DoctorDb.php">Dashboard</a></li>
+			  		  <?php } 
+			  		   else{ ?>
+			  		  <li><a href="PatientDb.php">Dashboard</a></li>
+			  		  <?php } ?>
+			          <li class="menu-has-children"><a href="">Blog</a>
+			            <ul>
+			              <li><a href="blog-home.php">Blog Home</a></li>
+			              <li><a href="blog-single.php">Blog Single</a></li>
+			            </ul>
+			          </li>	
+			          <li class="menu-has-children"><a href="">Features</a>
+			            <ul>
+			            	  <li><a href="gapi.php">Hospitals Near You</a></li>
+			            	  <li><a href="bmi.php">BMI Calculator</a></li>
+			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
+					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
+					            <ul>
+					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
+					              <li><a href="treatment.php">Treatment</a></li>
+					            </ul>
+					          </li>					                		
+			            </ul>
+			          </li>					          					          		          
+			          <li><a href="contact.php">Contact</a></li>
+			           <li><a href="index.php">Log Out</a></li>
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -63,30 +170,41 @@ $abc = $_SESSION['utype'];
 					<div class="row fullscreen d-flex align-items-center justify-content-center">
 						<div class="banner-content col-lg-8 col-md-12">
 							<h1>
-								Simplifying and transforming health industry
+								Prescription
 							</h1>
-							<p class="pt-10 pb-10 text-white">
-								A tool for all the users as well as medical professionals to centralize and simplify the management of health and medical records, and improve the transparency and efficiency when it comes to diagnosing and treating patients by different medical professionals.
-							</p>
-							<a href="login.php" class="primary-btn text-uppercase">LOG IN OR SIGN UP</a>
+							
 						</div>										
 					</div>
 				</div>					
 			</section>
 			<!-- End banner Area -->
-
-					<section class="our-mission-area section-gap">
+			
+			<section class="appointment-area">			
 				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-70 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Medical and Health Application</h1>
-								<p>One place to store all your medical data and simplify your routine medical check-ups</p>
-							</div>
+					
+						<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
+							<form class="form-wrap" action="Prescription.php" method="post">
+										
+								<input type="text" class="form-control" name="name" placeholder="Patient Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient Name'" >
+								<input type="text" class="form-control" name="age" placeholder="age " onfocus="this.placeholder = ''" onblur="this.placeholder = 'age'" >
+								<input type="text" class="form-control" name="sex" placeholder="sex" onfocus="this.placeholder = ''" onblur="this.placeholder = 'sex'" >
+								<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date" type="text">   
+								<input type="text" class="form-control" name="dname" placeholder="Doctor's name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Doctor's name'" >
+								<input type="text" class="form-control" name="specialty" placeholder="speciality" onfocus="this.placeholder = ''" onblur="this.placeholder = 'speciality'" >
+								<input type="text" class="form-control" name="med1" placeholder="Medicine 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Medicine 1'" >
+								<input type="text" class="form-control" name="med2" placeholder="Medicine 2" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Medicine 2'" >
+								<input type="text" class="form-control" name="med3" placeholder="Medicine 3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Medicine 3'" >
+								<input type="text" class="form-control" name="testp" placeholder="Test prescribed" onfocus="this.placeholder = ''" onblur="this.placeholder = 'c'" >
+								
+									
+								
+								<textarea name="comment" class="" rows="5" placeholder="comment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Test prescribed'"></textarea> 
+								<button class="primary-btn text-uppercase" name="submit" >Add Presciption</button>
+							</form>
 						</div>
-					</div>	
-				</div>
-				</section>
+					</div>
+				</div>	
+			</section>
 
 					
 
@@ -144,149 +262,10 @@ $abc = $_SESSION['utype'];
 			<!-- End facilities Area -->
 			
 
-			<!-- Start offered-service Area -->
-			<section class="offered-service-area section-gap">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-lg-8 offered-left">
-							<h1 class="text-white">Our Offered Services</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
-							</p>
-							<div class="service-wrap row">
-								<div class="col-lg-6 col-md-6">
-									<div class="single-service">
-										<div class="thumb">
-											<img class="img-fluid" src="img/s1.jpg" alt="">		
-										</div>
-										<a href="#">
-											<h4 class="text-white">Cardiac Treatment</h4>
-										</a>	
-										<p>
-											inappropriate behavior Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-										</p>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6">
-									<div class="single-service">
-										<div class="thumb">
-											<img class="img-fluid" src="img/s2.jpg" alt="">		
-										</div>
-										<a href="#">
-											<h4 class="text-white">Routine Checkup</h4>
-										</a>	
-										<p>
-											inappropriate behavior Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-										</p>
-									</div>
-								</div>								
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="offered-right relative">
-								<div class="overlay overlay-bg"></div>
-								<h3 class="relative text-white">Departments</h3>
-								<ul class="relative dep-list">
-									<li><a href="#">Pediatric Diagnosis</a></li>
-									<li><a href="#">Outpatient Rehabilitation</a></li>
-									<li><a href="#">Laryngological Functions</a></li>
-									<li><a href="#">Ophthalmology Unit</a></li>
-									<li><a href="#">Cardiac Unit</a></li>
-									<li><a href="#">Outpatient Surgery</a></li>
-									<li><a href="#">Gynaecological Wings</a></li>
-								</ul>
-								<a class="viewall-btn" href="#">View all Department</a>			
-							</div>	
-						</div>
-					</div>
-				</div>	
-			</section>
-			<!-- End offered-service Area -->
+			
 		
 	
-			<!-- Start recent-blog Area -->
-			<section class="recent-blog-area section-gap">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-md-7 pb-60 header-text">
-							<h1>Our Recent Blogs</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
-							</p>
-						</div>
-					</div>
-					<div class="row">	
-						<div class="single-recent-blog col-lg-4 col-md-4">
-							<div class="thumb">
-								<img class="f-img img-fluid mx-auto" src="img/b1.jpg" alt="">	
-							</div>						
-							<a href="#">
-								<h4>Portable Fashion for women</h4>
-							</a>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea.
-							</p>
-							<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-								<div>
-									<img class="img-fluid" src="img/user.png" alt="">
-									<a href="#"><span>Mark Wiens</span></a>
-								</div>
-								<div class="meta">
-									13th Dec
-									<span class="lnr lnr-heart"></span> 15
-									<span class="lnr lnr-bubble"></span> 04
-								</div>
-							</div>								
-						</div>
-						<div class="single-recent-blog col-lg-4 col-md-4">
-							<div class="thumb">
-								<img class="f-img img-fluid mx-auto" src="img/b2.jpg" alt="">	
-							</div>						
-							<a href="#">
-								<h4>Summer ware are coming</h4>
-							</a>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea.
-							</p>
-							<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-								<div>
-									<img class="img-fluid" src="img/user.png" alt="">
-									<a href="#"><span>Mark Wiens</span></a>
-								</div>
-								<div class="meta">
-									13th Dec
-									<span class="lnr lnr-heart"></span> 15
-									<span class="lnr lnr-bubble"></span> 04
-								</div>
-							</div>								
-						</div>
-						<div class="single-recent-blog col-lg-4 col-md-4">
-							<div class="thumb">
-								<img class="f-img img-fluid mx-auto" src="img/b3.jpg" alt="">	
-							</div>						
-							<a href="#">
-								<h4>Summer ware are coming</h4>
-							</a>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea.
-							</p>
-							<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-								<div>
-									<img class="img-fluid" src="img/user.png" alt="">
-									<a href="#"><span>Mark Wiens</span></a>
-								</div>
-								<div class="meta">
-									13th Dec
-									<span class="lnr lnr-heart"></span> 15
-									<span class="lnr lnr-bubble"></span> 04
-								</div>
-							</div>								
-						</div>																
-					</div>
-				</div>	
-			</section>
-			<!-- end recent-blog Area -->	
-
+			
 			<!-- start footer Area -->		
 			<footer class="footer-area section-gap">
 				<div class="container">

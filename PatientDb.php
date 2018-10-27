@@ -1,16 +1,18 @@
 <?php
 session_start();
-$abc = $_SESSION['utype'];
-$user = $_SESSION['usern'];
+ $a= $_SESSION['id'];
+ $abc = $_SESSION['utype'];
+ $user = $_SESSION['usern'];
+
 ?>
 
-<html>
-<head>
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!DOCTYPE html>
+  <html lang="zxx" class="no-js">
+  <head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/fav.png">
+    
     <!-- Author Meta -->
     <meta name="author" content="colorlib">
     <!-- Meta Description -->
@@ -36,93 +38,250 @@ $user = $_SESSION['usern'];
       <link rel="stylesheet" href="css/owl.carousel.css">     
       <link rel="stylesheet" href="css/jquery-ui.css">      
       <link rel="stylesheet" href="css/main.css">
-  
-  <title>Health</title>
-  
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-  <link rel="stylesheet" href="css/bmi.css">
-
-</head>
-<body>
-
-  <header id="header">
+    </head>
+    <body>  
+      <header id="header">
         
         <div class="container main-menu">
           <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
-
-              <a href="index.php"><img src="img/logo.png" alt="" title="" /></a>
+              <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
             </div>
             <nav id="nav-menu-container">
               <ul class="nav-menu">
+
                 <li><a href="#"><span><i class="fa fa-user" aria-hidden="true"></i><?php echo $user;?><span></a><li>
-			          <?php if($abc=="Doctor"){ ?>
+               
+                 <?php if($abc=="Doctor"){ ?>
               <li><a href="DoctorDb.php">Dashboard</a></li>
               <?php } 
                else{ ?>
               <li><a href="PatientDb.php">Dashboard</a></li>
               <?php } ?>
-			          <li class="menu-has-children"><a href="">Blog</a>
-			            <ul>
-			              <li><a href="blog-home.php">Blog Home</a></li>
-			              <li><a href="blog-single.php">Blog Single</a></li>
-			            </ul>
-			          </li>	
-			          <li class="menu-has-children"><a href="">Features</a>
-			            <ul>
-			            	  <li><a href="gapi.php">Hospitals Near You</a></li>
-			            	  <li><a href="bmi.php">BMI Calculator</a></li>
-			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
-					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
-					            <ul>
-					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
-					              <li><a href="treatment.php">Treatment</a></li>
+                <li class="menu-has-children"><a href="">Blog</a>
+                  <ul>
+                    <li><a href="blog-home.php">Blog Home</a></li>
+                    <li><a href="blog-single.php">Blog Single</a></li>
+
+                  </ul>
+                </li> 
+                <li class="menu-has-children"><a href="">Features</a>
+                  <ul>
+
+                      <li><a href="gapi.php">Hospitals Near You</a></li>
+                      <li><a href="bmi.php">BMI Calculator</a></li>
+
+                      <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
+                    <li class="menu-has-children"><a href="">Know About Your Disease</a>
+                      <ul>
+                        <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
+
+                        <li><a href="treatment.php">Treatment</a></li>
 
                       </ul>
                     </li>                             
                   </ul>
                 </li>                                                     
-
                 <li><a href="contact.php">Contact</a></li>
                  <li><a href="index.php">Log Out</a></li>
-
               </ul>
             </nav><!-- #nav-menu-container -->            
           </div>
         </div>
-      </header>
+      </header><!-- #header -->
 
-
-      <section class="banner-area relative about-banner" id="home"> 
+<section class="banner-area relative about-banner" id="home"> 
         <div class="overlay overlay-bg"></div>
         <div class="container">       
           <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
               <h1 class="text-white">
-                BMI CALCULATOR      
+                Medical History And Prescription     
               </h1> 
-             
+              
             </div>  
           </div>
         </div>
       </section>
 
-<div class="Container">
+      <div style="padding: 3%; margin: 0 auto;" class="container">
 
-<section class="bmi">
-    <div class="wrapper">
-      <h1>BMI Calculator</h1>
-      <h3>Weight kg</h3>
-      <input class="bmiinput" id="weight" type="number" value="70">
-      <input class="bmiinput" id=slider type="range" min="0" max="500" value="185">
-      <h3>Height cm</h3>
-      <span>Centimeters</span>
-      <input class="bmiinput" id="centimeters" type="number" value="185">
-      <output></output>
-    </div>
-  </section>
+  <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-8">
+              <div class="title text-center">
+                <h1 class="mb-10">See your medical records</h1>
+                <p>You can grant access to the doctors to allow them to see your reports.</p>
+              </div>
+            </div>
+          </div>
+
+
+<?php
+$Connection = mysqli_connect('localhost', 'root', '');
+$Selected = mysqli_select_db($Connection, 'health');
+
+if(isset($_POST["grant"])){
+  
+
+  $Query="UPDATE login SET access = 1 WHERE id = '$a'";
+    $Execute=mysqli_query($Connection, $Query);
+}  
+else if(isset($_POST["deny"])){
+  
+
+  $Query2="UPDATE login SET access = 0 WHERE id = '$a'";
+    $Execute=mysqli_query($Connection, $Query2);
+}   
+?>
+
+<center>
+<form method="post" action="PatientDb.php">
+<input type="submit" class="btn btn-success" name="grant" value="Grant Access">
+<input type="submit"  class="btn btn-success" name="deny" value="Deny Access">
+</form>
+</center>
+
+<?php
+$Connection = mysqli_connect('localhost', 'root', '');
+$Selected = mysqli_select_db($Connection, 'health');
+
+$ViewQuery="SELECT * From record WHERE p_id='$a'";
+$Execute=mysqli_query($Connection, $ViewQuery);
+while($DataRows=mysqli_fetch_array($Execute)){
+    $Name=$DataRows['name'];
+    $Age=$DataRows['age'];
+    $Sex=$DataRows['sex'];
+    $Test1=$DataRows['test1'];
+    $Test2=$DataRows['test2'];
+    $Test3=$DataRows['test3'];
+    $Report1=$DataRows['report1'];
+    $Report2=$DataRows['report2'];
+    $Report3=$DataRows['report3'];
+    $TDate1=$DataRows['tdate1'];
+    $TDate2=$DataRows['tdate2'];
+    $TDate3=$DataRows['tdate3'];
+ 
+?>
+<!-- put css and styling to display record -->
+<div style="margin: 3% auto;">
+  <div class="card text-center">
+  <div class="card-header">
+Medical History
+</div>
+
+<div class="card-body">
+<div class="card-text">
+<center>Name : <?php echo $Name;?></center>
+ <center>Sex : <?php echo $Sex;?></center>
+</div>
+</div>
+ 
+
+ <?php
+  if(!empty($Test1)){
+    echo "Test : ".$Test1;
+    if(!empty($Report1)){
+      echo "Result : ".$Report1;
+    }
+  }
+ ?>
+ <?php
+  if(!empty($Test2)){
+    echo "Test : ".$Test2;
+    if(!empty($Report2)){
+      echo "Result : ".$Report2;
+    }
+  }
+ ?>
+ <?php
+  if(!empty($Test3)){
+    echo "Test : ".$Test1;
+    if(!empty($Report3)){
+      echo "Result : ".$Report3;
+    }
+  }
+ ?>
+ 
+</div>
+
+<?php } ?>
+
+ <div class="card text-center">
+  <div class="card-header">
+<h1>Past Prescriptions</h1>
+</div>
+<div class="card-body">
+
+
+<?php
+$Connection = mysqli_connect('localhost', 'root', '');
+$Selected = mysqli_select_db($Connection, 'health');
+
+$ViewQuery="SELECT * From prescription WHERE p_id='$a'";
+$Execute=mysqli_query($Connection, $ViewQuery);
+while($DataRows=mysqli_fetch_array($Execute)){
+    $Name=$DataRows['name'];
+    $Age=$DataRows['age'];
+    $Sex=$DataRows['sex'];
+    $Doctor_name=$DataRows['doctor_name'];
+    $Specialty=$DataRows['specialty'];
+    $Med1=$DataRows['med1'];
+    $Med2=$DataRows['med2'];
+    $Med3=$DataRows['med3'];
+    $TestP=$DataRows['test_prescribed'];
+    $Comment=$DataRows['comment'];
+    $Date= $DataRows['ddate'];
+ 
+?>
+<!-- put css and styling to display record -->
+
+
+<div class="card-text"> Name : <?php echo $Name;?></div>
+<div class="card-text"> Age : <?php echo $Age;?></div>
+ <div class="card-text">Sex : <?php echo $Sex;?></div>
+<div class="card-text"> Date : <?php echo $Date;?></div>
+<div class="card-text"> Doctor Name : <?php echo $Doctor_name;?></div>
+<div class="card-text"> Specialty : <?php echo $Specialty;?></div>
+
+<div class="card-text"> <?php
+ if(!empty($Med1)){
+  echo "Salt Name: ".$Med1;
+ }?>
+ </div>
+
+ <div class="card-text">
+  <?php
+ if(!empty($Med2)){
+  echo "Salt Name: ".$Med2;
+ }?>
+</div>
+
+<div class="card-text"><?php
+  if(!empty($Med3)){
+  echo "Salt Name: ".$Med3;
+ }?></div>
+
+ <div class="card-text"><?php
+  if(!empty($TestP)){
+  echo "Test Prescribed: ".$TestP;
+ }?></div>
+
+ <div class="card-text">
+ <?php
+ if(!empty($Comment)){
+  echo "Test Prescribed: ".$Comment;
+ }
+?></div>
+
+
+<?php } ?>
 
 </div>
+
+</div>
+</div>
+</div>
+
 
 <footer class="footer-area section-gap">
         <div class="container">
@@ -173,8 +332,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
           </div>
         </div>
       </footer>
+      <!-- End footer Area -->
 
-        <script src="js/vendor/jquery-2.2.4.min.js"></script>
+
+      <script src="js/vendor/jquery-2.2.4.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/vendor/bootstrap.min.js"></script>      
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
@@ -188,6 +349,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
       <script src="js/jquery.nice-select.min.js"></script>  
       <script src="js/owl.carousel.min.js"></script>                  
       <script src="js/mail-script.js"></script> 
-      <script src="js/bmi.js" charset="utf-8"></script>
-</body>
-</html>
+      <script src="js/main.js"></script>  
+    </body>
+  </html>

@@ -1,4 +1,9 @@
-	<!DOCTYPE html>
+<?php
+session_start();
+$abc = $_SESSION['utype'];
+$user = $_SESSION['usern'];
+?>
+<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
 		<!-- Mobile Specific Meta -->
@@ -42,9 +47,14 @@
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
 
-			          <li><a href="index.php">Home</a></li>
-			          <li><a href="about.php">About</a></li>
-			          <li><a href="doctors.php">Doctors</a></li>
+			        	<li><a href="#"><span><i class="fa fa-user" aria-hidden="true"></i><?php echo $user;?><span></a><li>
+			          
+			          	<?php if($abc=="Doctor"){ ?>
+			  		  <li><a href="DoctorDb.php">Dashboard</a></li>
+			  		  <?php } 
+			  		   else{ ?>
+			  		  <li><a href="PatientDb.php">Dashboard</a></li>
+			  		  <?php } ?>
 			          <li class="menu-has-children"><a href="">Blog</a>
 			            <ul>
 			              <li><a href="blog-home.php">Blog Home</a></li>
@@ -65,7 +75,8 @@
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
-			          <li><a href="contact.html">Contact</a></li>
+			          <li><a href="contact.php">Contact</a></li>
+			           <li><a href="index.php">Log Out</a></li>
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>

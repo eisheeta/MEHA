@@ -47,14 +47,20 @@ if(isset($_POST["login"])){
 		$Password=$_POST["password"];
 		$Type=$_POST["type"];
 
-		$user_check_query = "SELECT id FROM login WHERE userid='$Userid' AND password='$Password' AND user_type='$Type' LIMIT 1";
+		$user_check_query = "SELECT id, user_type, userid FROM login WHERE userid='$Userid' AND password='$Password' AND user_type='$Type' LIMIT 1";
 		$Execute=mysqli_query($Connection, $user_check_query);
 		$Id = 0;
+		$Utype = "";
+		$Usern = "";
 		while($DataRows=mysqli_fetch_array($Execute)){
         $Id=$DataRows['id'];
+        $Utype = $DataRows['user_type'];
+        $Usern = $DataRows['userid'];
         }
 		$x= $Id;
 		$_SESSION['id'] = $x;
+		$_SESSION['utype'] = $Utype;
+		$_SESSION['usern'] =$Usern;
         $result = mysqli_query($Connection, $user_check_query);
         $user = mysqli_fetch_assoc($result);
   
@@ -125,28 +131,8 @@ if(isset($_POST["login"])){
 			        <ul class="nav-menu">
 			          <li><a href="index.php">Home</a></li>
 			          
-			          <li><a href="doctors.php">Doctors</a></li>
-			          <li class="menu-has-children"><a href="">Blog</a>
-			            <ul>
-			              <li><a href="blog-home.php">Blog Home</a></li>
-			              <li><a href="blog-single.php">Blog Single</a></li>
-			            </ul>
-			          </li>	
-			          <li class="menu-has-children"><a href="">Features</a>
-			            <ul>
-			            	  <li><a href="gapi.php">Hospitals Near You</a></li>
-			            	  <li><a href="bmi.php">BMI Calculator</a></li>
-			            	  <li><a href="https://www.eraktkosh.in/BLDAHIMS/bloodbank/transactions/bbpublicindex.html" target = "_blank">Blood Banks Near You</a></li>
-					          <li class="menu-has-children"><a href="">Know About Your Disease</a>
-					            <ul>
-					              <li><a href="https://symptomchecker.isabelhealthcare.com/suggest_diagnoses_advanced/landing_page" target = "_blank">Symptom Checker</a></li>
-					              <li><a href="treatment.php">Treatment</a></li>
-					            </ul>
-					          </li>					                		
-			            </ul>
-			          </li>					          					          		          
-			          <li><a href="contact.html">Contact</a></li>
-			        </ul>
+			          
+			          
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
 		    </div>

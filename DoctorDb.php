@@ -1,6 +1,8 @@
 <?php
 session_start();
 $x= $_SESSION['id'];
+$abc = $_SESSION['utype'];
+$user = $_SESSION['usern'];
 ?>  
 
 
@@ -48,9 +50,15 @@ $x= $_SESSION['id'];
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
 
-			          <li><a href="index.php">Home</a></li>
-			          <li><a href="about.php">About</a></li>
-			          <li><a href="doctors.php">Doctors</a></li>
+			          <li><a href="#"><span><i class="fa fa-user" aria-hidden="true"></i><?php echo $user;?><span></a><li>
+			           
+			           <?php if($abc=="Doctor"){ ?>
+			  		  <li><a href="DoctorDb.php">Dashboard</a></li>
+			  		  <?php } 
+			  		   else{ ?>
+			  		  <li><a href="PatientDb.php">Dashboard</a></li>
+			  		  <?php } ?>
+
 			          <li class="menu-has-children"><a href="">Blog</a>
 			            <ul>
 			              <li><a href="blog-home.php">Blog Home</a></li>
@@ -75,7 +83,8 @@ $x= $_SESSION['id'];
 					          </li>					                		
 			            </ul>
 			          </li>					          					          		          
-			          <li><a href="contact.html">Contact</a></li>
+			          <li><a href="contact.php">Contact</a></li>
+			          <li><a href="index.php">Log out</a></li>
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
@@ -139,7 +148,7 @@ $x= $_SESSION['id'];
  $Selected = mysqli_select_db($Connection, 'health');
 if(isset($_GET['SearchButton'])){
     $Search=$_GET['Search'];
-    $SearchQuery="SELECT * FROM login WHERE id='$Search' AND user_type='Patient' ";
+    $SearchQuery="SELECT * FROM login WHERE id='$Search' AND user_type='Patient' AND access=1";
     $Execute=mysqli_query($Connection, $SearchQuery);
      
     while($DataRows=mysqli_fetch_array($Execute)){
