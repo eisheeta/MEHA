@@ -48,8 +48,7 @@ $abc = $_SESSION['utype'];
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
 			            <li><a href="index.php">Home</a></li>
-			            <li><a href="contact.php">Contact</a></li>
-
+			            
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>

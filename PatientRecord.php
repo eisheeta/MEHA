@@ -214,9 +214,9 @@ while($DataRows=mysqli_fetch_array($Execute)){
 
 <div class="card-body">
 <div class="card-text">
-Name : <?php echo $Name;?></div>
+<strong>Name :</strong> <?php echo $Name;?></div>
 
- <div class="card-text">Sex : <?php echo $Sex;?></div>
+ <div class="card-text"><strong>Sex :</strong> <?php echo $Sex;?></div>
 
 
 <div class="card-text">
@@ -234,7 +234,7 @@ Name : <?php echo $Name;?></div>
  	<form action="PatientRecord.php" method="post">
     <div class="form-group">
  		<input class="form-control" name="report" required>
- 		<input class="btn btn-success" type="Submit" Name="add1" value="Add Results">
+ 		<input class="btn btn-success form-control" type="Submit" Name="add1" value="Add Results">
   </div>
  	</form>
 
@@ -328,12 +328,12 @@ while($DataRows=mysqli_fetch_array($Execute)){
 <!-- put css and styling to display record -->
 
 
- <div class="card-text"> Name: <?php echo $Name;?></div>
-<div class="card-text"> Age: <?php echo $Age;?></div>
- <div class="card-text">Sex: <?php echo $Sex;?></div>
-<div class="card-text"> Date: <?php echo $Date;?></div>
-<div class="card-text"> Doctor Name: <?php echo $Doctor_name;?></div>
-<div class="card-text"> Specialty : <?php echo $Specialty;?></div>
+ <div class="card-text"><strong> Name:</strong> <?php echo $Name;?></div>
+<div class="card-text"><strong> Age:</strong> <?php echo $Age;?></div>
+ <div class="card-text"><strong>Sex: </strong> <?php echo $Sex;?></div>
+<div class="card-text"> <strong>Date: </strong> <?php echo $Date;?></div>
+<div class="card-text"> <strong> Doctor Name: </strong> <?php echo $Doctor_name;?></div>
+<div class="card-text"> <strong>Specialty :</strong> <?php echo $Specialty;?></div>
 
 <div class="card-text"> 
 
