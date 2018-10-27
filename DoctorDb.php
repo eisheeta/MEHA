@@ -128,7 +128,7 @@ $user = $_SESSION['usern'];
 
 						<form action="DoctorDb.php" method="GET">
    						
-   						<input type="text" class="form-control" name="Search" value="" placeholder="Search by Patient ID">
+   						<input type="text" class="form-control" name="Search" value="" placeholder="Search by Patient ID" required >
         				<div style="padding: 10px 0;">
         				<input class="btn btn-primary" type="submit" name="SearchButton" value="Search">
         				</div>

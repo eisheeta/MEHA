@@ -233,7 +233,7 @@ Name : <?php echo $Name;?></div>
 
  	<form action="PatientRecord.php" method="post">
     <div class="form-group">
- 		<input class="form-control" name="report">
+ 		<input class="form-control" name="report" required>
  		<input class="btn btn-success" type="Submit" Name="add1" value="Add Results">
   </div>
  	</form>
@@ -260,7 +260,7 @@ Name : <?php echo $Name;?></div>
  	?>
  	<form action="PatientRecord.php" method="post">
      <div class="form-group">
- 		<textarea name="report"></textarea>
+ 		<textarea name="report" required></textarea>
  		<input type="Submit" class="form-control" name="add2" value="Add Results">
   </div>
  	</form>
@@ -284,7 +284,7 @@ Name : <?php echo $Name;?></div>
  else{
  	?>
  	<form action="PatientRecord.php" method="post">
- 		<textarea name="report"></textarea>
+ 		<textarea name="report"></textarea required>
  		<input class="btn btn-success" type="Submit" name="add3" value="Add Results">
  	</form>
 <?php

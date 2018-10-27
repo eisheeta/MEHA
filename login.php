@@ -172,21 +172,21 @@ if(isset($_POST["login"])){
 								<div class="form-group">
     							<label for="inputEmail3" class="col-sm-4 col-form-label">User Id</label>
    								
-      							<input type="text" class="form-control" id="inputEmail3" placeholder="userid" name="userid">
+      							<input type="text" class="form-control" id="inputEmail3" placeholder="userid" name="userid" required>
     							
   								</div>
 
   								<div class="form-group">
     							<label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
     							
-      							<input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
+      							<input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password" required>
     							
   								</div>
 								
 								<div class="form-group">
 								<label class="my-1 mr-2 col-sm-4 col-form-label" for="inlineFormCustomSelectPref">Type Of User</label>
   								
-  								<select class="form-control form-control-sm" id="inlineFormCustomSelectPref" name="type">
+  								<select class="form-control form-control-sm" id="inlineFormCustomSelectPref" name="type" required>
     								       <option selected disabled>User type</option>
     								       <option>Doctor</option>  
     									   <option>Patient</option>
@@ -230,21 +230,21 @@ if(isset($_POST["login"])){
 								<div class="form-group">
     							<label for="inputEmail" class="col-sm-4 col-form-label">User Id</label>
    								
-      							<input type="text" class="form-control" id="inputEmail" placeholder="userid" name="userid">
+      							<input type="text" class="form-control" id="inputEmail" placeholder="userid" name="userid" required>
     							
   								</div>
 
   								<div class="form-group">
     							<label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
     							
-      							<input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password">
+      							<input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
     							
   								</div>
 								
 								<div class="form-group">
 								<label class="my-1 mr-2 col-sm-4 col-form-label" for="inlineFormCustomSelect">Type Of User</label>
   								
-  								<select class="form-control form-control-sm" id="inlineFormCustomSelect" name="type">
+  								<select class="form-control form-control-sm" id="inlineFormCustomSelect" name="type" required>
     								       <option selected disabled>User type</option>
     								       <option>Doctor</option>  
     									   <option>Patient</option>
@@ -255,7 +255,7 @@ if(isset($_POST["login"])){
  								<div class="form-group">
 								<label class="my-1 mr-2 col-sm-4 col-form-label" for="tomS">Sex</label>
   								
-  								<select class="form-control form-control-sm" id="tomS" name="sex">
+  								<select class="form-control form-control-sm" id="tomS" name="sex" required>
     								       <option selected disabled>Select your Sex</option>
     								       <option>Male</option>  
     									   <option>Female</option>

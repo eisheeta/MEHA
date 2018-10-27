@@ -113,8 +113,8 @@ $user = $_SESSION['usern'];
     <div class="wrapper">
       <h1>BMI Calculator</h1>
       <h3>Weight kg</h3>
-      <input class="bmiinput" id="weight" type="number" value="70">
-      <input class="bmiinput" id=slider type="range" min="0" max="500" value="185">
+      <input class="bmiinput" id="weight" type="number" value="70" required>
+      <input class="bmiinput" id=slider type="range" min="0" max="500" value="185" required>
       <h3>Height cm</h3>
       <span>Centimeters</span>
       <input class="bmiinput" id="centimeters" type="number" value="185">

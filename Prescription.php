@@ -48,20 +48,21 @@ $Query="INSERT INTO prescription( name, age, sex, p_id, d_id, doctor_name, speci
         $Tflag1 = $DataRows['tflag1'];
 		 $Tflag2 = $DataRows['tflag2'];
 		 $Tflag3 = $DataRows['tflag3'];
+		  
 
 
          if($Tflag1==0){
-         	echo 0;
-         	$Query1="UPDATE record SET test1 = '$TestP', tflag1 = 1 WHERE p_id = '$b'";
+         	//echo 0;
+         	$Query1="UPDATE record SET test1 = '$TestP', tflag1 = 1, tdate1 = date('m/d/Y h:i:s a', time()) WHERE p_id = '$b'";
      		$Execute1=mysqli_query($Connection, $Query1);
          }
          else if($Tflag2==0){
-         	echo 4;
-         	$Query2="UPDATE record SET test2 = '$TestP', tflag2 = 1 WHERE p_id = '$b'";
+         	//echo 4;
+         	$Query2="UPDATE record SET test2 = '$TestP', tflag2 = 1, tdate2 = date('m/d/Y h:i:s a', time()) WHERE p_id = '$b'";
      		$Execute1=mysqli_query($Connection, $Query2);
          }
          else if($Tflag3==0){
-         	$Query3="UPDATE record SET test3 = '$TestP', tflag3 = 1 WHERE p_id = '$b'";
+         	$Query3="UPDATE record SET test3 = '$TestP', tflag3 = 1, tdate3 = date('m/d/Y h:i:s a', time()) WHERE p_id = '$b'";
      		$Execute1=mysqli_query($Connection, $Query3);
          }
 
@@ -185,12 +186,12 @@ else{
 						<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
 							<form class="form-wrap" action="Prescription.php" method="post">
 										
-								<input type="text" class="form-control" name="name" placeholder="Patient Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient Name'" >
-								<input type="text" class="form-control" name="age" placeholder="age " onfocus="this.placeholder = ''" onblur="this.placeholder = 'age'" >
-								<input type="text" class="form-control" name="sex" placeholder="sex" onfocus="this.placeholder = ''" onblur="this.placeholder = 'sex'" >
-								<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date" type="text">   
-								<input type="text" class="form-control" name="dname" placeholder="Doctor's name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Doctor's name'" >
-								<input type="text" class="form-control" name="specialty" placeholder="speciality" onfocus="this.placeholder = ''" onblur="this.placeholder = 'speciality'" >
+								<input type="text" class="form-control" name="name" placeholder="Patient Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient Name'"  required>
+								<input type="text" class="form-control" name="age" placeholder="age " onfocus="this.placeholder = ''" onblur="this.placeholder = 'age'" required>
+								<input type="text" class="form-control" name="sex" placeholder="sex" onfocus="this.placeholder = ''" onblur="this.placeholder = 'sex'" required>
+								<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date" type="text" required>   
+								<input type="text" class="form-control" name="dname" placeholder="Doctor's name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Doctor's name'" required>
+								<input type="text" class="form-control" name="specialty" placeholder="speciality" onfocus="this.placeholder = ''" onblur="this.placeholder = 'speciality'" required>
 								<input type="text" class="form-control" name="med1" placeholder="Medicine 1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Medicine 1'" >
 								<input type="text" class="form-control" name="med2" placeholder="Medicine 2" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Medicine 2'" >
 								<input type="text" class="form-control" name="med3" placeholder="Medicine 3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Medicine 3'" >
